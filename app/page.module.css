@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+.introDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s;
+  gap: 20px;
+  text-align: center;
+  z-index: 2;
+
+}
+
+.slideUp {
+  transform: translate(-50%, calc(-50% - 100px));
+}
+
+.borderRadius {
+  border-radius: 10%;
+}
+
+.hiddenContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Behind the image */
+  opacity: 0;
+  pointer-events: auto;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  width: 100%;
+  text-align: center;
+  font-family: serif;
+}
+
+.slideDown {
+  transform: translate(-50%, calc(-50% + 120px)); /* move hidden content down */
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 3;
+  
+}
+
+.buttonWrapper {
+  margin-top: 20px;
+  
+}
