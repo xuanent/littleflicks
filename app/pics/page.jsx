@@ -19,7 +19,7 @@ const LOCATIONS = [
   { label: "Sequoia", slug: "sequoia", desc: "Sept'24 club fall retreat" }
 ];
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function LocationsPage({searchParams}) {
     const locationSlug =
