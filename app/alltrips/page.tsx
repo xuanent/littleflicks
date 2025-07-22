@@ -20,7 +20,7 @@ export default function alltrips() {
       </div>
       <div className={styles.topMargin}>
         <div className={styles.statDiv}>
-          <p className={styles.statText}>6</p>
+          <p className={styles.statText}>7</p>
           <DropdownMenu>
             <DropdownMenuTrigger className={"flex"}>
               National Parks
@@ -33,6 +33,7 @@ export default function alltrips() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>Yosemite</DropdownMenuItem>
+              <DropdownMenuItem>Sequoia</DropdownMenuItem>
               <DropdownMenuItem>Pinnacle</DropdownMenuItem>
               <DropdownMenuItem>Rocky Mt</DropdownMenuItem>
               <DropdownMenuItem>Mt Rainier</DropdownMenuItem>
