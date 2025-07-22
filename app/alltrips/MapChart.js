@@ -11,9 +11,6 @@ import {
   Marker
 } from "react-simple-maps";
 
-const geoUrl =
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/north-america.json";
-
 const markers = [
   { markerOffset: 15, name: "NYC", slug: "newyork", coordinates: [-74.006, 40.7128] },
   { markerOffset: 15, name: "Mt Rainier", slug: "rainier", coordinates: [-121.726906, 46.879967] },

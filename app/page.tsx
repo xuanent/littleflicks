@@ -37,13 +37,13 @@ export default function Home() {
                     />
                   </DialogTitle>
                   <DialogDescription>
-                    here is a compilation of our travel diaries and i can't wait
-                    to make many more memories with you. i love you!
+                    here is a compilation of our travel diaries and i can&apos;t
+                    wait to make many more memories with you. i love you!
                   </DialogDescription>
                 </DialogHeader>
               </DialogContent>
             </Dialog>
-            ff and xuan's travel flicks{" "}
+            ff and xuan&apos;s travel flicks{" "}
           </p>
         </div>
 
