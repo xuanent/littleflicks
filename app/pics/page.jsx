@@ -1,9 +1,10 @@
 
 
 import LocationBar from "@/components/ui/LocationBar.jsx";
-import { getImagesByLocation } from "@/lib/getImages";
 import ImageGrid from "@/components/ui/ImageGrid";
 import styles from "./page.module.css";
+import { imagesByLocation } from "@/lib/imagesByLocation";
+
 
 const LOCATIONS = [
   { label: "All", slug: "all" , desc: "Everything everywhere all at once"},
@@ -31,7 +32,6 @@ export default async function LocationsPage({searchParams}) {
     const locationLabel = locationObj.label; 
     const locationDesc = locationObj.desc;
 
-  const imagesByLocation = getImagesByLocation();
   const images =
     locationSlug === "all"
       ? Object.values(imagesByLocation).flat()

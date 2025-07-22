@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/genImages.js",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -15,7 +16,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.523.0",
-    "next": "15.3.4",
+    "next": "^15.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-simple-maps": "^3.0.0",
