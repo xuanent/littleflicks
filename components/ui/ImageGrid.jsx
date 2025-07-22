@@ -11,7 +11,7 @@ export default function ImageGrid({ images }) {
       <div className={styles.gridContainer}>
         {images.map((img, index) => (
           <div className={styles.gridItem} key={index} onClick={() => setSelectedImage(img)}>
-            <Image className={styles.gridImage} src={img} alt={`Image ${index}`} width={300} height={300} unoptimized/>
+            <Image className={styles.gridImage} src={img} alt={`Image ${index}`} width={300} height={300} loading="lazy" unoptimized/>
           </div>
         ))}
       </div>
