@@ -28,7 +28,8 @@ export default function ImageGrid({ locationSlug }) {
       
 
   return (
-    <>
+    <div className = "flex justify-center p-[4%]">
+
       <div className={styles.gridContainer}>
         {loading ? (
          
@@ -83,6 +84,6 @@ export default function ImageGrid({ locationSlug }) {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

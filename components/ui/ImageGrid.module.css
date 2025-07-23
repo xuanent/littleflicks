@@ -1,8 +1,8 @@
 
 .gridContainer {
+  width: 100%;
   column-count: 2;
   column-gap: 5px;
-  padding: 5px;
   row-gap: 5px;
 }
 
