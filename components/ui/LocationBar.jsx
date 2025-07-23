@@ -62,7 +62,7 @@ export default function LocationBar( {locationSlug} ) {
             width="24"
             height="24"
             fill="none"
-            viewBox="0 0 24 24"
+            viewBox="-2 0 24 24"
             stroke="currentColor"
             strokeWidth="1.5"
           >

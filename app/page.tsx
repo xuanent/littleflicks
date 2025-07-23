@@ -27,7 +27,13 @@ export default function Home() {
               <DialogTrigger> i </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>
+                  <DialogTitle className="flex gap-[5px]">
+                    <Image
+                      src="/images/Heart-PNG-Image.png"
+                      alt="yosemite"
+                      width={20}
+                      height={20}
+                    />
                     happy anniversary jiff!{" "}
                     <Image
                       src="/images/Heart-PNG-Image.png"

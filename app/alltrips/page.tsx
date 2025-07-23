@@ -64,7 +64,7 @@ export default function alltrips() {
           </DropdownMenu>
         </div>
         <div className={styles.statDiv}>
-          <p className={styles.statText}>9</p>
+          <p className={styles.statText}>10</p>
           <DropdownMenu>
             <DropdownMenuTrigger className={"flex"}>
               Places
@@ -78,6 +78,7 @@ export default function alltrips() {
             <DropdownMenuContent>
               <DropdownMenuItem>Yosemite</DropdownMenuItem>
               <DropdownMenuItem>Pinnacle</DropdownMenuItem>
+              <DropdownMenuItem>Sequoia</DropdownMenuItem>
               <DropdownMenuItem>Bass Lake</DropdownMenuItem>
               <DropdownMenuItem>Rocky Mt</DropdownMenuItem>
               <DropdownMenuItem>Mt Rainier</DropdownMenuItem>
