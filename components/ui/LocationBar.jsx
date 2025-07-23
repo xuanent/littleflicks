@@ -18,10 +18,10 @@ const LOCATIONS = [
   { label: "Sequoia", slug: "sequoia", desc: "Sept'24 club fall retreat" }
 ];
 
-export default function LocationBar() {
+export default function LocationBar( {locationSlug} ) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const locationSlug = searchParams.get("location") || "all";
+  // const searchParams = useSearchParams();
+  // const locationSlug = searchParams.get("location") || "all";
 
   const containerRef = useRef(null);
   const [touchStartX, setTouchStartX] = useState(0);
