@@ -2,20 +2,51 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./ImageGrid.module.css";
+import { imagesByLocation } from "@/lib/imagesByLocation";
+import { useEffect } from "react";
+import { Skeleton } from "@/components/ui/skeleton"
 
-export default function ImageGrid({ images }) {
+
+
+export default function ImageGrid({ locationSlug }) {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setImages([]);
+
+    const newImages =
+      locationSlug === "all"
+        ? Object.values(imagesByLocation).flat()
+        : imagesByLocation[locationSlug] || [];
+
+    setImages(newImages);
+    setLoading(false);
+  }, [locationSlug]);
+      
 
   return (
     <>
       <div className={styles.gridContainer}>
-        {images.map((img, index) => (
-          <div className={styles.gridItem} key={index} onClick={() => setSelectedImage(img)}>
-            <Image className={styles.gridImage} src={img} alt={`Image ${index}`} width={300} height={300} loading="lazy" 
-            // unoptimized
-            />
-          </div>
-        ))}
+        {loading ? (
+         
+          Array.from({ length: 8 }).map((_, i) => (
+            <div className={styles.gridItem} key={i}>
+              <Skeleton className="h-[300px] w-full"/>
+            </div>
+          ))
+          
+         ) : (
+          images.map((img, index) => (
+            <div className={styles.gridItem} key={index} onClick={() => setSelectedImage(img)}>
+              <Image className={styles.gridImage} src={img} alt={`Image ${index}`} width={300} height={300} loading="lazy" 
+              // unoptimized
+              />
+            </div>
+          ))
+          )} 
       </div>
 
       {selectedImage && (
