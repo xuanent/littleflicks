@@ -12,6 +12,25 @@ export default function ImageGrid({ locationSlug }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    if (typeof navigator !== "undefined") {
+      const ua = navigator.userAgent.toLowerCase();
+      console.log("Lowercase UA:", ua);
+
+      const isSafari =
+        ua.includes("safari") &&
+        !ua.includes("chrome") &&
+        !ua.includes("crios") &&
+        !ua.includes("fxios") &&
+        !ua.includes("edgios");
+      
+      setIsSafari(isSafari);
+      console.log("isSafari:", isSafari);
+      
+    }
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -41,10 +60,24 @@ export default function ImageGrid({ locationSlug }) {
           
          ) : (
           images.map((img, index) => (
-            <div className={styles.gridItem} key={index} onClick={() => setSelectedImage(img)}>
-              <Image className={styles.gridImage} src={img} alt={`Image ${index}`} width={300} height={300} loading="lazy" 
-              // unoptimized
+            <div
+              key={index}
+              className={`${styles.gridItem} ${
+                isSafari && index === 0 ? styles.firstItemMargin : ""
+              }`}
+              onClick={() => setSelectedImage(img)}
+            >
+              <div className={styles.imageWrapper}>
+                <Image
+                  className={styles.gridImage}
+                  src={img}
+                  alt={`Image ${index}`}
+                  width={300}
+                  height={300}
+                  loading="lazy"
+                // unoptimized
               />
+              </div>
             </div>
           ))
           )} 
