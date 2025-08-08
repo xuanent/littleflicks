@@ -13,9 +13,13 @@ export default function ImageGrid({ locationSlug }) {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isSafari, setIsSafari] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof navigator !== "undefined") {
+      const isMobile = /android|iphone|ipad|ipod|mobile/i.test(navigator.userAgent);
+
+      setIsMobile(isMobile);
       const ua = navigator.userAgent.toLowerCase();
       console.log("Lowercase UA:", ua);
 
@@ -28,6 +32,7 @@ export default function ImageGrid({ locationSlug }) {
       
       setIsSafari(isSafari);
       console.log("isSafari:", isSafari);
+      console.log("isMobile:", isMobile);
       
     }
   }, []);
@@ -75,7 +80,7 @@ export default function ImageGrid({ locationSlug }) {
                   width={300}
                   height={300}
                   loading="lazy"
-                // unoptimized
+                  unoptimized={!isMobile}
               />
               </div>
             </div>

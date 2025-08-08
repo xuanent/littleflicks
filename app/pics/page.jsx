@@ -1,6 +1,6 @@
 
 import LocationBar from "@/components/ui/LocationBar.jsx";
-import ImageGrid from "@/components/ui/ImageGrid";
+import ImageGrid from "@/components/ui/ImageGrid.jsx";
 import styles from "./page.module.css";
 
 
@@ -17,8 +17,6 @@ const LOCATIONS = [
   { label: "Bass Lake", slug: "bass", desc: "Sept'24 club fall retreat" },
   { label: "Sequoia", slug: "sequoia", desc: "Sept'24 club fall retreat" }
 ];
-
-// export const dynamic = "force-dynamic";
 
 export default async function LocationsPage({searchParams}) {
     const locationSlug =
